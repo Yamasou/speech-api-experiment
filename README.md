@@ -1,3 +1,10 @@
+# Speech API を試す
+
+[Web Speech API](https://developer.mozilla.org/ja/docs/Web/API/Web_Speech_API) を使って web アプリ上で音声データを扱う方法を試してみる。
+ライブラリもあれば試す。
+
+## 環境
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

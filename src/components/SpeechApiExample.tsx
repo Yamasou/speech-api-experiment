@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export const SpeechApiSample: React.FC = () => {
+export const SpeechApiExample: React.FC = () => {
   const [result, setResult] = useState("");
 
   useEffect(() => {

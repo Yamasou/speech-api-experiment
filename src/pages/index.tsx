@@ -3,8 +3,8 @@ import dynamic from "next/dynamic";
 
 const DynamicTestComponent = dynamic<{}>(
   () =>
-    import("../components/ReactSpeechRecognitionSample").then(
-      (mod) => mod.Test2
+    import("../components/ReactSpeechRecognitionExample").then(
+      (mod) => mod.ReactSpeechRecognitionExample
     ),
   { ssr: false }
 );

@@ -1,28 +1,27 @@
-import { useState } from 'react';
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
+import React, { useState } from "react";
+import SpeechRecognition, {
+  useSpeechRecognition,
+} from "react-speech-recognition";
 
-export const Test2: React.FC = () => {
+export const ReactSpeechRecognitionExample: React.FC = () => {
   const [hits, setHits] = useState<string[]>([]);
   const commands = [
     {
-      command: '米',
-      callback: (result: {
-        command: string;
-        resetTranscript: () => void
-      }) => {
-        console.log(result)
+      command: "米",
+      callback: (result: { command: string; resetTranscript: () => void }) => {
+        console.log(result);
         setHits((prev) => [...prev, result.command]);
       },
     },
     {
-      command: 'お金',
+      command: "お金",
       callback: (command: string) => {
-        console.log(command)
+        console.log(command);
         setHits((prev) => [...prev, command]);
       },
       isFuzzyMatch: true,
     },
-  ]
+  ];
 
   const {
     transcript,
@@ -37,15 +36,25 @@ export const Test2: React.FC = () => {
 
   return (
     <div>
-      <p>Microphone: {listening ? 'on' : 'off'}</p>
-      <button onClick={() => SpeechRecognition.startListening({
-        continuous: true,
-        language: 'ja-JP'
-      })}>Start</button>
+      <p>Microphone: {listening ? "on" : "off"}</p>
+      <button
+        onClick={() =>
+          SpeechRecognition.startListening({
+            continuous: true,
+            language: "ja-JP",
+          })
+        }
+      >
+        Start
+      </button>
       <button onClick={SpeechRecognition.stopListening}>Stop</button>
       <button onClick={resetTranscript}>Reset</button>
       <hr />
-      <div>{hits.map((hit, index) => <span key={index}>{hit}</span>)}</div>
+      <div>
+        {hits.map((hit, index) => (
+          <span key={index}>{hit}</span>
+        ))}
+      </div>
       <hr />
       <p>{transcript}</p>
     </div>
